@@ -10,8 +10,11 @@ end
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
+group :production do
+  gem 'pg', '0.12.2'
+end
 
-
+gem 'rb-readline'
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
