@@ -8,6 +8,9 @@ class StaticPagesController < ApplicationController
   def about
   end
 
-  def sorgula
+  def sign_in
+  end
+
+  def contact
   end
 end
