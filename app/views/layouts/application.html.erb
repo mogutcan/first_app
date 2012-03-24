@@ -5,10 +5,24 @@
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
+  
+  <!-- _shim.html.erb icine tarayıcı uyumsuzlugu yazılır !-->
+
+  <%= render 'layouts/shim' %>
+
 </head>
 <body>
+  <%= render 'layouts/header' %>   
+  <!-- SAYFA BASLIKLARINI layouts/_header ' dan CEKECEK!-->
 
-<%= yield %>
+
+   <div class = "container">
+           
+        <%= yield %>
+
+          <!-- footer sayfanın altında olması için yield altına render ettik !-->
+         <%= render 'layouts/footer' %>
+   </div>
 
 </body>
 </html>
