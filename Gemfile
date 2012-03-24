@@ -4,9 +4,9 @@ gem 'rails', '3.2.2'
 
 group :development, :test do
   gem 'sqlite3', '1.3.5'
-<<<<<<< HEAD
 
-  end
+
+end
 
 
   # Bundle edge Rails instead:
