@@ -23,11 +23,11 @@ end
 
 group :production do
   gem 'pg', '0.12.2'
-end
+
 
 gem 'rb-readline'
 
-  gem 'rspec-rails', '2.8.1'
+  
 end
 
 
