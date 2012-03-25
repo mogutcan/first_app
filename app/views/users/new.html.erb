@@ -1,7 +1,25 @@
-<% provide(:title, 'Sign up') %>
-<h1> Yeni Kullanici Ekle!</h1>
+<%= provide(:title, 'Sign up') %>
+<h1>Kayıt ol</h1>
 
-<%= render 'form' %>
+<div class="row">
+  <div class="span6 offset3">
+    <%= form_for(@user) do |f| %>
 
-<%= link_to 'Back', users_path %>
+      <%= render 'shared/error_messages' %>
 
+      <%= f.label :name , "Ad soyad"%>
+      <%= f.text_field :name  %>
+
+      <%= f.label :email, "Email"%>
+      <%= f.text_field :email %>
+
+      <%= f.label :password , "Parola"%>
+      <%= f.password_field :password %>
+
+      <%= f.label :password_confirmation, "Parola onayı" %>
+      <%= f.password_field :password_confirmation %>
+
+      <%= f.submit "Hesabımı Oluştur", :class => "btn btn-large btn-primary" %>
+    <% end %>
+  </div>
+</div>

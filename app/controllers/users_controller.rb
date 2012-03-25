@@ -18,6 +18,9 @@ class UsersController < ApplicationController
 
 
   def new
+
+    @user = User.new
+
   end
 
   # GET /users/1/edit
@@ -30,14 +33,13 @@ class UsersController < ApplicationController
   def create
     @user = User.new(params[:user])
 
-    respond_to do |format|
-      if @user.save
-        format.html { redirect_to @user, notice: 'Kullanici olusturuldu.' }
-        format.json { render json: @user, status: :created, location: @user }
-      else
-        format.html { render action: "new" }
-        format.json { render json: @user.errors, status: :unprocessable_entity }
-      end
+    if @user.save
+
+      flash[:success] = "Tebrikler UniversiteDergisi'ne Hosgeldiniz!"
+
+      redirect_to @user
+    else
+      render 'new'
     end
   end
 
