@@ -1,25 +1,32 @@
 <header class="navbar navbar-fixed-top">
   <div class="navbar-inner">
     <div class="container">
-
-          <%= link_to "Çevrimiçi Üniversite Dergisi", root_path, id: "logo" %>
-          <nav>
-          
-             <ul class="nav pull-right">
-
-               <li> <%= link_to "Anasayfa", root_path %> </li>
-               <li> <%= link_to "Yardim " , help_path %> </li>
-
-               <li> <%= link_to "Hakkında" ,about_path %> </li>
-
-               <li> <%= link_to "Kayıt ol" ,'#'        %> </li>
-             </ul>
-          </nav>
-          
+      <%= link_to "UniversiteDergisi", root_path, id: "logo" %>
+      <nav>
+        <ul class="nav pull-right">
+          <li><%= link_to "Anasayfa", root_path %></li>
+          <li><%= link_to "Yardım", help_path %></li>
+          <% if signed_in? %>
+            <li><%= link_to "Users", '#' %></li>
+            <li id="fat-menu" class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                Hesabım <b class="caret"></b>
+              </a>
+              <ul class="dropdown-menu">
+                <li><%= link_to "Profil", current_user %></li>
+                <li><%= link_to "Ayarlar", '#' %></li>
+                <li class="divider"></li>
+                <li>
+                  <%= link_to "Çıkış", signout_path, method: "delete" %>
+                </li>
+              </ul>
+            </li>
+          <% else %>
+            <li><%= link_to "Giris yap", signin_path %></li>
+          <% end %>
+        </ul>
+      </nav>
     </div>
   </div>
-</div>
 </header>
-
-
 
